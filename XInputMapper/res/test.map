@@ -1,0 +1,120 @@
+{
+    "LTSense": "0.500000",
+    "LSSense": "0.150000",
+    "RTSense": "0.500000",
+    "RSSense": "0.150000",
+    "Buttons": [
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        },
+        {
+            "key": 48,
+            "inputType": 1,
+            "mouseButton": 0,
+            "specialCode": 38,
+            "mouseDirection": 0,
+            "mouseSpeed": "0.000000"
+        }
+    ]
+}

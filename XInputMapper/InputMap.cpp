@@ -14,6 +14,14 @@ InputMap::InputMap(void)
 	Y =			new Input(specialKey, '0', VK_TAB, 0,0,0);
 	LShoulder = new Input(key, 'q', 0,0,0,0);
 	RShoulder = new Input(key, 'e', 0,0,0,0);
+	Back =		new Input(specialKey, '0', VK_ESCAPE, 0,0,0);
+	Start =		new Input(specialKey, '0', VK_RETURN, 0,0,0);
+	LStick =	new Input(specialKey, '0', VK_MENU, 0,0,0);
+	RStick =	new Input(specialKey, '0', VK_DELETE, 0,0,0);
+	DDown =		new Input(specialKey, '0', VK_DOWN, 0,0,0);
+	DRight =	new Input(specialKey, '0', VK_RIGHT, 0,0,0);
+	DLeft =		new Input(specialKey, '0', VK_LEFT, 0,0,0);
+	DUp =		new Input(specialKey, '0', VK_UP, 0,0,0);
 	LTrigger =	new Input(mousePress, '0', 0,1,0,0);
 	RTrigger =	new Input(mousePress, '0', 0,0,0,0);
 	LSDown =	new Input(key, 's', 0,0,0,0);
@@ -31,11 +39,20 @@ InputMap::InputMap(void)
 	Buttons[3] = Y;	
 	Buttons[4] = LShoulder;
 	Buttons[5] = RShoulder;
+	Buttons[6] = Back;
+	Buttons[7] = Start;
+	Buttons[8] = LStick;
+	Buttons[9] = RStick;
+	Buttons[10] = DDown;
+	Buttons[11] = DRight;
+	Buttons[12] = DLeft;
+	Buttons[13] = DUp;
 }
 
 
 InputMap::~InputMap(void)
 {
+	
 	delete A;
 	delete B;
 	delete X;
@@ -60,6 +77,4 @@ InputMap::~InputMap(void)
 	delete RSRight;
 	delete RSLeft;
 	delete RSUp;
-
-	delete Buttons;
 }

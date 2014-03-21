@@ -53,11 +53,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>Z:\IGMProfile\GIT\XInputMapper\XInputMapper\jansson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>xinput.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>jansson_d.lib;xinput.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Z:\IGMProfile\GIT\XInputMapper\XInputMapper\jansson\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -82,6 +84,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputMap.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mapper.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="XGamepad.cpp" />
   </ItemGroup>
@@ -89,6 +92,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputMap.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Mapper.h" />
     <ClInclude Include="Robot.h" />
     <ClInclude Include="XGamepad.h" />
   </ItemGroup>

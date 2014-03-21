@@ -7,5 +7,6 @@
 #include "Robot.h"
 #include "XGamepad.h"
 #include "InputMap.h"
+#include "Mapper.h"
 
 #endif

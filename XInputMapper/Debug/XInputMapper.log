@@ -1,0 +1,28 @@
+﻿Build started 3/16/2014 6:39:58 PM.
+     1>Project "\\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\XInputMapper\XInputMapper.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IZ:\IGMProfile\GIT\XInputMapper\XInputMapper\jansson\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Mapper.cpp
+         Mapper.cpp
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(16): warning C4101: 'error' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(15): warning C4101: 'root' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(47): warning C4101: 'LSRight' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(48): warning C4101: 'LSLeft' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(53): warning C4101: 'RSUp' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(46): warning C4101: 'LSDown' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(51): warning C4101: 'RSRight' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(50): warning C4101: 'RSDown' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(49): warning C4101: 'LSUp' : unreferenced local variable
+     1>\\banner.main.ad.rit.edu\students\amt3824\igmprofile\git\xinputmapper\xinputmapper\mapper.cpp(52): warning C4101: 'RSLeft' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\Debug\XInputMapper.exe" /INCREMENTAL /NOLOGO /LIBPATH:Z:\IGMProfile\GIT\XInputMapper\XInputMapper\jansson\lib\Debug jansson_d.lib xinput.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\Debug\XInputMapper.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\Debug\XInputMapper.lib" /MACHINE:X86 Debug\Input.obj
+         Debug\InputMap.obj
+         Debug\main.obj
+         Debug\Mapper.obj
+         Debug\Robot.obj
+         Debug\XGamepad.obj
+         XInputMapper.vcxproj -> \\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\Debug\XInputMapper.exe
+     1>Done Building Project "\\banner.main.ad.rit.edu\students\amt3824\IGMProfile\GIT\XInputMapper\XInputMapper\XInputMapper.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.63
