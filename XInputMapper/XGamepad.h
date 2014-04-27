@@ -11,10 +11,9 @@ class XGamepad
 public:
 	XGamepad(int portNumber);
 
-	void Refresh(const SDL_Event& event);
+	void Refresh(const SDL_Event& event, const SDL_Event& previousEvent);
 
 	DWORD* GetButtonsPressed();
-	DWORD* GetButtonsReleased();
 
 	float GetLeftTrigger();
 	float GetRightTrigger();
@@ -31,13 +30,12 @@ private:
 	int controllerID;
 	int playerNumber;
 	
-	SDL_GameController* gamepad;
+	SDL_Joystick* joy;
 	SDL_Haptic* haptic;
 	SDL_JoystickID joystickID;
 	bool isConnected;
 
 	DWORD buttonsPressed[14];
-	DWORD buttonsReleased[14];
 
 	float leftTrigger;
 	float rightTrigger;

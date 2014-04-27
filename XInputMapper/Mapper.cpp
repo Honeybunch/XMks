@@ -615,11 +615,13 @@ void Mapper::mapController()
 	float previousRTValue = 0;
 
 	SDL_Event event;
+	SDL_Event previousEvent;
 
 	while(running)
 	{
 		SDL_PollEvent(&event);
-		gamepad->Refresh(event);
+
+		gamepad->Refresh(event, previousEvent);
 
 		buttonsPressed = gamepad->GetButtonsPressed();
 
@@ -922,6 +924,8 @@ void Mapper::mapController()
 		previousRTValue = rightTrigger;
 
 		//system("cls");
+
+		previousEvent = event;
 	}
 }
 

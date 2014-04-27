@@ -11,6 +11,8 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
+	SDL_SetHint("SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS", "1"); 
+
 	Mapper* mapperOne = new Mapper(1);
 
 	while(running)
