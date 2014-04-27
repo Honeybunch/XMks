@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <windows.h>
-#include <XInput.h>
+#include <SDL.h>
 #include <math.h>
 
 class XGamepad
@@ -11,7 +11,7 @@ class XGamepad
 public:
 	XGamepad(int portNumber);
 
-	void Refresh();
+	void Refresh(const SDL_Event& event);
 
 	DWORD* GetButtonsPressed();
 	DWORD* GetButtonsReleased();
@@ -30,7 +30,11 @@ public:
 private:
 	int controllerID;
 	int playerNumber;
-	XINPUT_STATE state;
+	
+	SDL_GameController* gamepad;
+	SDL_Haptic* haptic;
+	SDL_JoystickID joystickID;
+	bool isConnected;
 
 	DWORD buttonsPressed[14];
 	DWORD buttonsReleased[14];
@@ -44,7 +48,8 @@ private:
 	float rightStickX;
 	float rightStickY;
 
-	bool GetController(int portNumber);
+	void Open(int portNumber);
+	void Close();
 
 };
 

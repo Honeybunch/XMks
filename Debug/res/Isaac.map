@@ -1,0 +1,200 @@
+{
+    "RSDown": {
+        "key": 0,
+        "inputType": 1,
+        "mouseSpeed": "0.000000",
+        "specialCode": 40,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LTSense": "0.500000",
+    "RTSense": "0.500000",
+    "LTrigger": {
+        "key": 0,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "RTrigger": {
+        "key": 0,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LSDown": {
+        "key": 115,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LSSense": "0.150000",
+    "RSSense": "0.150000",
+    "Buttons": [
+        {
+            "key": 113,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 1,
+            "mouseSpeed": "0.000000",
+            "specialCode": 32,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 101,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 1,
+            "mouseSpeed": "0.000000",
+            "specialCode": 27,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 1,
+            "mouseSpeed": "0.000000",
+            "specialCode": 13,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        },
+        {
+            "key": 0,
+            "inputType": 0,
+            "mouseSpeed": "0.000000",
+            "specialCode": 0,
+            "mouseButton": 0,
+            "mouseDirection": 0
+        }
+    ],
+    "RSUp": {
+        "key": 0,
+        "inputType": 1,
+        "mouseSpeed": "0.000000",
+        "specialCode": 38,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LSRight": {
+        "key": 100,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LSLeft": {
+        "key": 97,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "RSRight": {
+        "key": 0,
+        "inputType": 1,
+        "mouseSpeed": "0.000000",
+        "specialCode": 39,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "LSUp": {
+        "key": 119,
+        "inputType": 0,
+        "mouseSpeed": "0.000000",
+        "specialCode": 0,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    },
+    "RSLeft": {
+        "key": 0,
+        "inputType": 1,
+        "mouseSpeed": "0.000000",
+        "specialCode": 37,
+        "mouseButton": 0,
+        "mouseDirection": 0
+    }
+}

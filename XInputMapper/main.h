@@ -2,7 +2,10 @@
 #define MAIN_H
 
 #include <iostream>
-#include <windows.h>
+#include <limits>
+#include <SDL.h>
+
+#define NOMINMAX
 
 #include "Robot.h"
 #include "XGamepad.h"

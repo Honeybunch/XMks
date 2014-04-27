@@ -2,6 +2,11 @@
 #define INPUTMAP_H
 
 #include <Windows.h>
+#include <unordered_map>
+#include <iostream>
+#include <string>
+using namespace std;
+
 #include "Input.h"
 
 class InputMap
@@ -44,6 +49,9 @@ public:
 
 	//Array of buttons
 	Input* Buttons[14];
+
+	//HashMap of all inputs
+	unordered_map<string, Input*> inputs;
 
 	~InputMap(void);
 

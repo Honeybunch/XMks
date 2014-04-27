@@ -13,6 +13,7 @@ class Input
 {
 public:
 	Input(short inputType, char k, short sC, int mB, int mD, float mS);
+	Input();
 
 	/*
 		0 = key

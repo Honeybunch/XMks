@@ -4,41 +4,127 @@
 XGamepad::XGamepad(int portNumber)
 {		
 	playerNumber = portNumber;
-	GetController(portNumber);
+	isConnected = false;
 }
 
-bool XGamepad::GetController(int portNumber)
+void XGamepad::Open(int portNumber)
 {
 	//Keep trying to find a controller, and get it's ID
-	controllerID = -1;
+	std::cout << "Controller Count: " << SDL_NumJoysticks() << std::endl;
 
-	ZeroMemory(&state, sizeof(XINPUT_STATE));
-
-	if(XInputGetState(playerNumber -1,&state) == ERROR_SUCCESS)
+	if(SDL_IsGameController(portNumber - 1))
 	{
-		std::cout << "Controller " << playerNumber <<" Detected" << std::endl;	
-		controllerID = playerNumber -1;
-		return true;
+		std::cout << "Found controller at port " << portNumber << " named: " << SDL_GameControllerNameForIndex(portNumber -1) << std::endl; 
+		gamepad = SDL_GameControllerOpen(portNumber - 1);
 	}
 	else
 	{
-		return false;
+		std::cout << "Could not open controller " <<playerNumber <<": " << SDL_GetError() << std::endl;
+		return;
+	}
+
+	SDL_Joystick* joy = SDL_GameControllerGetJoystick(gamepad);
+	joystickID = SDL_JoystickInstanceID(joy);
+
+	isConnected = true;
+
+	//If they joystick has haptic controller
+	if(SDL_JoystickIsHaptic(joy))
+	{
+		haptic = SDL_HapticOpenFromJoystick(joy);
+		std::cout << "Haptic Effects: " << SDL_HapticNumEffects(haptic) << std::endl;
+		std::cout << "Haptic Query: " << SDL_HapticQuery(haptic) << std::endl;
+		if(SDL_HapticRumbleSupported(haptic))
+		{
+			//If we have haptic rumble support, lets initiate it
+			if(SDL_HapticRumbleInit(haptic) != 0)
+			{
+				std::cout << "Haptic Rumble Init: " << SDL_GetError() << std::endl;
+				SDL_HapticClose(haptic);
+				haptic = 0;
+			}
+		}
+		else
+		{
+			SDL_HapticClose(haptic);
+			haptic = 0;
+		}
+	}
+	else
+	{
+		std::cout << "No haptics :(" << std::endl;
+	}
+}
+
+void XGamepad::Close()
+{
+	if(isConnected)
+	{
+		isConnected = false;
+		if(haptic)
+		{
+			SDL_HapticClose(haptic);
+			haptic = 0;
+		}
+		SDL_GameControllerClose(gamepad);
+		gamepad = 0;
 	}
 }
 
 //Refresh the controller input and store it in the variables of this class
-void XGamepad::Refresh()
+void XGamepad::Refresh(const SDL_Event& event)
 {
 	//If the controller isn't connected, set the ID to -1 and start looking for it again
-	if(XInputGetState(controllerID, &state) != ERROR_SUCCESS)
+	if(!isConnected)
 	{
 			controllerID = -1;
-			GetController(playerNumber);
-
+			Open(playerNumber);
 	}
 
-	//Check if every button is pressed
-	
+	//Check and update inputs
+	switch(event.type)
+	{
+	case SDL_JOYAXISMOTION:
+		{
+			std::cout << "Axis Motion!" << std::endl;
+			break;
+		}
+	case SDL_JOYBUTTONDOWN:
+		{
+			Uint8 buttonIndex = event.jbutton.button;
+
+			std::cout << "Button Down!" << std::endl;
+
+			buttonsPressed[buttonIndex] = 1;
+			break;
+		}
+	case SDL_JOYBUTTONUP:
+		{
+			Uint8 buttonIndex = event.jbutton.button;
+
+			std::cout << "Button Up!" << std::endl;
+
+			buttonsPressed[buttonIndex] = 0;
+			break;
+		}
+	/*
+	case SDL_CONTROLLERDEVICEADDED:
+		{
+			Open(playerNumber);
+			break;
+		}
+	case SDL_CONTROLLERDEVICEREMOVED:
+		{
+			Close();
+			break;
+		}
+		*/
+	default:
+		{
+			break;
+		}
+	}
+	/*
 	//4 Letter buttons
 	if((state.Gamepad.wButtons & XINPUT_GAMEPAD_A) != 0)
 		buttonsPressed[0] = 1;
@@ -115,6 +201,7 @@ void XGamepad::Refresh()
 
 	rightStickX = max(-1, (float)state.Gamepad.sThumbRX / 32767);
 	rightStickY = max(-1, (float)state.Gamepad.sThumbRY / 32767);
+	*/
 }
 
 //Getters
@@ -153,4 +240,8 @@ float XGamepad::GetRightStickY()
 
 XGamepad::~XGamepad(void)
 {
+	Close();
+
+	delete gamepad;
+	delete haptic;
 }

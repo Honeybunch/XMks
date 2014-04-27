@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <thread>
 
 #include "jansson.h"
 #include "jansson_config.h"
@@ -21,7 +22,10 @@ public:
 	bool loadMap(string file);
 	bool writeMap(string file);
 
+	InputMap* getMap();
+
 	void runMap();
+	void stopMap();
 
 	~Mapper(void);
 
@@ -29,5 +33,9 @@ private:
 	Robot* robot;
 	XGamepad* gamepad;
 	InputMap* inputMap;
+	thread* mapThread;
+
+	bool running;
+	void mapController();
 };
 
