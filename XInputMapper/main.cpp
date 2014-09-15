@@ -4,14 +4,14 @@ int main(int argc, char* argv[])
 {	
 	bool running = true;
 
+	SDL_SetHint(SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS, "1");
+
 	//We will be using the Joystick subsystem of SDL, but we kind of have to init everything
-	if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
+	if(SDL_Init(SDL_INIT_EVENTS | SDL_INIT_GAMECONTROLLER | SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC) < 0)
 	{
 		cout << "SDL Failed to initialize: " << SDL_GetError();
 		return -1;
 	}
-
-	SDL_SetHint("SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS", "1"); 
 
 	Mapper* mapperOne = new Mapper(1);
 

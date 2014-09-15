@@ -30,9 +30,7 @@ private:
 	int controllerID;
 	int playerNumber;
 	
-	SDL_Joystick* joy;
-	SDL_Haptic* haptic;
-	SDL_JoystickID joystickID;
+	SDL_GameController* controller;
 	bool isConnected;
 
 	DWORD buttonsPressed[14];

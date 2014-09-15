@@ -1,43 +1,18 @@
-﻿Build started 9/14/2014 3:53:58 PM.
-     1>Project "Z:\cygwin64\home\amt3824\Git\XMks\XInputMapper\XInputMapper.vcxproj" on node 2 (Build target(s)).
+﻿Build started 9/15/2014 3:13:09 PM.
+     1>Project "D:\Users\amt3824\XMks\XInputMapper\XInputMapper.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IZ:\cygwin64\home\amt3824\Git\XMks\XInputMapper\\SDL2\include /IZ:\cygwin64\home\amt3824\Git\XMks\XInputMapper\\jansson\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Input.cpp InputMap.cpp main.cpp Mapper.cpp Robot.cpp XGamepad.cpp
-         XGamepad.cpp
-     1>z:\cygwin64\home\amt3824\git\xmks\xinputmapper\xgamepad.cpp(106): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>z:\cygwin64\home\amt3824\git\xmks\xinputmapper\xgamepad.cpp(273): warning C4150: deletion of pointer to incomplete type '_SDL_Joystick'; no destructor called
-                 z:\cygwin64\home\amt3824\git\xmks\xinputmapper\sdl2\include\sdl_joystick.h(64) : see declaration of '_SDL_Joystick'
-     1>z:\cygwin64\home\amt3824\git\xmks\xinputmapper\xgamepad.cpp(274): warning C4150: deletion of pointer to incomplete type '_SDL_Haptic'; no destructor called
-                 z:\cygwin64\home\amt3824\git\xmks\xinputmapper\sdl2\include\sdl_haptic.h(134) : see declaration of '_SDL_Haptic'
-         Robot.cpp
-     1>z:\cygwin64\home\amt3824\git\xmks\xinputmapper\robot.cpp(108): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>z:\cygwin64\home\amt3824\git\xmks\xinputmapper\robot.cpp(109): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\Users\amt3824\XMks\XInputMapper\\SDL2\include /ID:\Users\amt3824\XMks\XInputMapper\\jansson\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Mapper.cpp
          Mapper.cpp
-         main.cpp
-         InputMap.cpp
-         Input.cpp
-         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\cygwin64\home\amt3824\Git\XMks\Debug\XInputMapper.exe" /INCREMENTAL /NOLOGO /LIBPATH:Z:\cygwin64\home\amt3824\Git\XMks\XInputMapper\\SDL2\lib\x86 /LIBPATH:Z:\cygwin64\home\amt3824\Git\XMks\XInputMapper\\jansson\lib\Debug SDL2main.lib SDL2.lib jansson_d.lib xinput.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Z:\cygwin64\home\amt3824\Git\XMks\Debug\XInputMapper.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\cygwin64\home\amt3824\Git\XMks\Debug\XInputMapper.lib" /MACHINE:X86 Debug\Input.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\amt3824\XMks\Debug\XInputMapper.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\Users\amt3824\XMks\XInputMapper\\SDL2\lib\x86 /LIBPATH:D:\Users\amt3824\XMks\XInputMapper\\jansson\lib\Debug SDL2main.lib SDL2.lib jansson_d.lib xinput.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\amt3824\XMks\Debug\XInputMapper.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\amt3824\XMks\Debug\XInputMapper.lib" /MACHINE:X86 Debug\Input.obj
          Debug\InputMap.obj
          Debug\main.obj
          Debug\Mapper.obj
          Debug\Robot.obj
          Debug\XGamepad.obj
-     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
-     1>jansson_d.lib(dump.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(dump.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(error.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(error.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(hashtable.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(hashtable.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(hashtable_seed.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(hashtable_seed.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(load.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(load.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(memory.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(memory.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(pack_unpack.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(pack_unpack.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(strbuffer.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(strbuffer.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(strconv.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(strconv.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(utf.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(utf.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-     1>jansson_d.lib(value.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'jansson_d.lib(value.obj)' or at 'Z:\cygwin64\home\amt3824\Git\XMks\Debug\vc110.pdb'; linking object as if no debug info
-         XInputMapper.vcxproj -> Z:\cygwin64\home\amt3824\Git\XMks\Debug\XInputMapper.exe
-     1>Done Building Project "Z:\cygwin64\home\amt3824\Git\XMks\XInputMapper\XInputMapper.vcxproj" (Build target(s)).
+         XInputMapper.vcxproj -> D:\Users\amt3824\XMks\Debug\XInputMapper.exe
+     1>Done Building Project "D:\Users\amt3824\XMks\XInputMapper\XInputMapper.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.08
+Time Elapsed 00:00:01.66

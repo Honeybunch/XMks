@@ -22,14 +22,25 @@ XGamepad::XGamepad(int portNumber)
 
 void XGamepad::Open(int portNumber)
 {
+	int numJoysticks = SDL_NumJoysticks();
+
 	//Keep trying to find a controller, and get it's ID
-	std::cout << "Controller Count: " << SDL_NumJoysticks() << std::endl;
+	std::cout << "Controller Count: " << numJoysticks << std::endl;
 
-	joy = SDL_JoystickOpen(portNumber -1);
-
-	if(joy)
+	if (numJoysticks <= 0)
 	{
-		std::cout << "Found controller at port " << portNumber << " named: " << SDL_GameControllerNameForIndex(portNumber -1) << std::endl; 
+		std::cout << "No Controllers Found" << std::endl;
+		return;
+	}
+
+	int portID = portNumber - 1;
+
+	//Check if the controller at the given port is compatible and open it
+	if(SDL_IsGameController(portID))
+	{
+		controller = SDL_GameControllerOpen(portID);
+
+		std::cout << "Found controller at port " << portNumber << " named: " << SDL_GameControllerNameForIndex(portID) << std::endl;
 	}
 	else
 	{
@@ -39,36 +50,7 @@ void XGamepad::Open(int portNumber)
 
 	isConnected = true;
 
-	 printf("Joystick has %d axes, %d hats, %d balls, and %d buttons\n",
-           SDL_JoystickNumAxes(joy), SDL_JoystickNumHats(joy),
-           SDL_JoystickNumBalls(joy), SDL_JoystickNumButtons(joy));
-
-	//If they joystick has haptic controller
-	if(SDL_JoystickIsHaptic(joy))
-	{
-		haptic = SDL_HapticOpenFromJoystick(joy);
-		std::cout << "Haptic Effects: " << SDL_HapticNumEffects(haptic) << std::endl;
-		std::cout << "Haptic Query: " << SDL_HapticQuery(haptic) << std::endl;
-		if(SDL_HapticRumbleSupported(haptic))
-		{
-			//If we have haptic rumble support, lets initiate it
-			if(SDL_HapticRumbleInit(haptic) != 0)
-			{
-				std::cout << "Haptic Rumble Init: " << SDL_GetError() << std::endl;
-				SDL_HapticClose(haptic);
-				haptic = 0;
-			}
-		}
-		else
-		{
-			SDL_HapticClose(haptic);
-			haptic = 0;
-		}
-	}
-	else
-	{
-		std::cout << "No haptics :(" << std::endl;
-	}
+	printf("Controller %i is mapped as \"%s\".\n", portNumber, SDL_GameControllerMapping(controller));
 }
 
 void XGamepad::Close()
@@ -76,12 +58,7 @@ void XGamepad::Close()
 	if(isConnected)
 	{
 		isConnected = false;
-		if(haptic)
-		{
-			SDL_HapticClose(haptic);
-			haptic = 0;
-		}
-		SDL_JoystickClose(joy);
+		SDL_GameControllerClose(controller);
 	}
 }
 
@@ -99,11 +76,13 @@ void XGamepad::Refresh(const SDL_Event& event, const SDL_Event& previousEvent)
 	switch(event.type)
 	{
 
-	case SDL_JOYAXISMOTION:
+	case SDL_CONTROLLERAXISMOTION:
 		{
 			int axis = event.jaxis.axis;
 			int value = event.jaxis.value;
-			float percentValue = value/32767; // The value we want from -1 to 1
+			float percentValue = value/32768.0f; // The value we want from -1 to 1
+
+			std::cout << percentValue << std::endl;
 
 			switch(value){
 			case 0:
@@ -128,21 +107,21 @@ void XGamepad::Refresh(const SDL_Event& event, const SDL_Event& previousEvent)
 
 			break;
 		}
-	case SDL_JOYBUTTONDOWN:
+	case SDL_CONTROLLERBUTTONDOWN:
 		{
-			int buttonIndex = event.jbutton.button;
+			int buttonIndex = event.cbutton.button;
 
 			std::cout << "Button " <<buttonIndex<< " Down!" << std::endl;
 
 			buttonsPressed[buttonIndex] = 1;
 			break;
 		}
-	case SDL_JOYBUTTONUP:
+	case SDL_CONTROLLERBUTTONUP:
 		{
 			int buttonIndex = event.jbutton.button;
 
 			//Only record a button up event if the button was down last cycle
-			if(previousEvent.type == SDL_JOYBUTTONDOWN && previousEvent.jbutton.button == buttonIndex)
+			if (previousEvent.type == SDL_CONTROLLERBUTTONDOWN && previousEvent.cbutton.button == buttonIndex)
 			{
 				std::cout << "Button " <<buttonIndex<< " Up!" << std::endl;
 
@@ -270,6 +249,5 @@ XGamepad::~XGamepad(void)
 {
 	Close();
 
-	delete joy;
-	delete haptic;
+	delete controller;
 }
